@@ -148,7 +148,7 @@ export default class Bubble extends React.Component {
   renderStatus() {
     if (this.props.currentMessage.status === MSG_STATUS.FAIL) {
       const {statusText, messageStatusStyle} = this.props;
-      return <Text style={messageStatusStyle}>{statusText || 'Not Delivered'}</Text>;
+      return <Text style={messageStatusStyle}>{statusText}</Text>;
     }
     return null;
   }
