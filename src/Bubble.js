@@ -148,7 +148,11 @@ export default class Bubble extends React.Component {
   renderStatus() {
     if (this.props.currentMessage.status === MSG_STATUS.FAIL) {
       const {statusText, messageStatusStyle} = this.props;
-      return <Text style={messageStatusStyle}>{statusText}</Text>;
+      return (
+        <View>
+          <Text style={messageStatusStyle}>{statusText}</Text>
+        </View>
+      );
     }
     return null;
   }
@@ -409,7 +413,7 @@ Bubble.propTypes = {
     right: ViewPropTypes.style,
   }),
   tickStyle: Text.propTypes.style,
-  messageStatusStyle: ViewPropTypes.style,
+  messageStatusStyle: Text.propTypes.style,
   usernameStyle: Text.propTypes.style,
   containerToNextStyle: PropTypes.shape({
     left: ViewPropTypes.style,
